@@ -6,6 +6,8 @@ import string
 import re
 import numpy as np
 
+
+#REF: Building Machine Learning Systems With Python book
 emo_repl = {
     # positive emoticons
     "&lt;3": "emoticon_good",
