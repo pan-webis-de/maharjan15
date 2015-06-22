@@ -26,7 +26,10 @@ def save_label_encoder(le,path,lang,name):
 
 
 def configure_age_gender(lang):
-
+    """
+    :param lang: language
+    :return: best configuration of features for the given language
+    """
 
 
     criteria = {

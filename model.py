@@ -3,6 +3,9 @@
 
 
 class Document(object):
+    """
+    models document object
+    """
     def __init__(self, **kwargs):
         self.lang = kwargs.pop('language', "en")
         self.name =kwargs.pop('name','')
@@ -20,6 +23,9 @@ class Document(object):
 
 
 class PersonalityTraits(object):
+    """
+    models personality traits
+    """
     def __init__(self, **kwargs):
         self.extroverted = kwargs.get("extroverted", 0.0)
         self.stable = kwargs.get("stable", 0.0)
@@ -29,6 +35,9 @@ class PersonalityTraits(object):
 
 
 class Author(object):
+    """
+    models author
+    """
     def __init__(self, **kwargs):
         self._gender = kwargs.get('gender', '')
         self._age_group = kwargs.get('age_group', '')

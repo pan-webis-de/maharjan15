@@ -19,6 +19,9 @@ from utils import change_range
 
 
 class Configuration:
+    """
+    class to control the combination of features
+    """
     def __init__(self, kwargs):
         self.language = kwargs.pop('lang', 'en')
         self.ngram = kwargs.pop('ngram', None)
@@ -174,7 +177,7 @@ class Test:
         self.model = model
         self.path = path
 
-        self.load_truth()
+        #self.load_truth()
 
 
     def load_truth(self):
@@ -209,14 +212,15 @@ class Test:
                     prediction = predictor.clf.predict(x_test)  # predict
                     temp_result.update(
                         predictor.label_extractor(list(predictor.label_encoder.inverse_transform(prediction))[0]))
+                    document.author.gender = temp_result['gender']
+                    document.author.age_group = temp_result['age_group']
                 if predictor.name == 'personality':
                     target = predictor.label_encoder.classes_
                     prediction = list(predictor.clf.predict_proba(x_test))[0]
                     prediction = [change_range(p, 1.0, 0.0, 0.5, -0.5) for p in prediction]
                     temp_result.update(predictor.label_extractor(target, prediction))
 
-            document.author.gender = temp_result['gender']
-            document.author.age_group = temp_result['age_group']
+
 
             document.author.personality_traits.extroverted = temp_result['extroverted']
             document.author.personality_traits.agreeable = temp_result['agreeable']

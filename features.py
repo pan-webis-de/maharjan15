@@ -20,6 +20,12 @@ import os
 
 
 def read_topic_tokens(path, name):
+    """
+    utility function to read resources (liwc, familial tokens ...)
+    :param path: path to file
+    :param name: prefix to be added to feature names
+    :return: dictionary of features
+    """
     token = {}
     with codecs.open(path, mode='rb') as f:
         for line in f.readlines():
@@ -32,6 +38,10 @@ def read_topic_tokens(path, name):
 
 
 class NGramTfidfVectorizer(TfidfVectorizer):
+    """
+    extends scikit-learn TfidfVectorizer class
+    overrides the build_analyzer method
+    """
     def build_analyzer(self):
         analyzer = super(TfidfVectorizer,
                          self).build_analyzer()
@@ -39,6 +49,10 @@ class NGramTfidfVectorizer(TfidfVectorizer):
 
 
 class FamilialFeatures(BaseEstimator):
+    """
+    extends scikit learn BaseEstimator class
+    computes familial tokens features
+    """
     def __init__(self, lang):
         self.lang = lang
         self.male, self.female, self.neutral = self._initialize()
@@ -115,6 +129,11 @@ class FamilialFeatures(BaseEstimator):
 
 
 class TwitterFeatures(BaseEstimator):
+    """
+    extends scikit learn BaseEstimator class
+    computes writing density and styles features
+
+    """
     def get_feature_names(self):
         return np.array(
             ['n_words', 'n_chars', 'numtexttoken', 'allcaps', 'exclamation', 'question', 'hashtag', 'mentioning',
@@ -160,6 +179,14 @@ class TwitterFeatures(BaseEstimator):
 
 
 class CategoricalCharNgramsVectorizer(TfidfVectorizer):
+    """
+    extends scikit learn TfidfVectorizer class
+    generates different categories of char n-grams and uses them as features
+
+    """
+
+
+
     _slash_W = string.punctuation + " "
 
     _punctuation = r'''['\"“”-‘’.?!…,:;#\<\=\>@\(\)\*]'''
@@ -316,6 +343,9 @@ class CategoricalCharNgramsVectorizer(TfidfVectorizer):
 
 
 class LDA(BaseEstimator, VectorizerMixin):
+    """
+    uses gensim library for topic modeling
+    """
     def __init__(self, **kwargs):
         self.number_of_topics = kwargs.get("n_topics", 10)
         self.preprocessor = kwargs.get("preprocessor", utils.preprocess)
