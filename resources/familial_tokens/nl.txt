@@ -1,0 +1,3 @@
+Male,vrouw,vriendin,vriendin,lieve vrouw
+Female,man,bf,vriend,lieve man,manlief,vriendje
+Neutral,ds,dd,zoon,dochter,kleinzoon,kleindochter,vader,moeder,broer,zus,oom,tante,neef,neef,nicht,familie,petekind,petekind,kleinkind,grootmoeder,grootvader,baby,babys,kind,kinderen,kind,moeder,ouder

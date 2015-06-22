@@ -1,0 +1,3 @@
+Male,wife,gf,girlfriend,dw
+Female,husband,bf,boyfriend,dh,hubby
+Neutral,ds,dd,son,daughter,grandson,granddaughter,father,mother,brother,sister,uncle,aunt,cousin,nephew,niece,family,godson,goddaughter,grandchild,grandmother,grandfather,baby,babies,child,children,kids,mom,parent,nonno,bambino,bambini,bambino,bambini,ragazzi,mamma,genitore

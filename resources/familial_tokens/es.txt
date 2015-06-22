@@ -1,0 +1,3 @@
+Male,esposa,novia,amiga,mujer,señora,vieja
+Female,esposo,marido,esposito,novio,amigo,maridito,hombre
+Neutral,hijo,hija,hijos,hijas,nietos,nietas,papa,mama,abuelos,abuela,abuelo,mama,papa,hermano,hermana,tío,tía,primo,prima,sobrina,sobrino,crio,cría,bebes,familia,ahijado,ahijada,nieto,nieta,bebe,niños,niñas,mami,papi,pareja

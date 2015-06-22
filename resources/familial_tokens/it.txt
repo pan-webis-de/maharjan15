@@ -1,0 +1,3 @@
+Male,moglie,fidanzata,cara moglie
+Female,marito,fidanzato,dh,mio marito
+Neutral,ds,dd,figlio,figlia,nipote,nipote,padre,madre,fratello,sorella,zio,zia,cugino,nipote,nipote,famiglia,figlioccio,figlioccia,nipote,grandmothert
