@@ -37,6 +37,9 @@ def read_topic_tokens(path, name):
     return token
 
 
+########################################################################################################################
+
+
 class NGramTfidfVectorizer(TfidfVectorizer):
     """
     extends scikit-learn TfidfVectorizer class
@@ -47,6 +50,9 @@ class NGramTfidfVectorizer(TfidfVectorizer):
                          self).build_analyzer()
         return lambda doc: (w for w in analyzer(doc.content))
 
+
+
+########################################################################################################################
 
 class FamilialFeatures(BaseEstimator):
     """
@@ -128,6 +134,9 @@ class FamilialFeatures(BaseEstimator):
         return self.scalar.transform(X)
 
 
+
+########################################################################################################################
+
 class TwitterFeatures(BaseEstimator):
     """
     extends scikit learn BaseEstimator class
@@ -177,6 +186,8 @@ class TwitterFeatures(BaseEstimator):
             self.scalar = preprocessing.StandardScaler().fit(X)
         return self.scalar.transform(X)
 
+
+########################################################################################################################
 
 class CategoricalCharNgramsVectorizer(TfidfVectorizer):
     """
@@ -342,6 +353,9 @@ class CategoricalCharNgramsVectorizer(TfidfVectorizer):
         return lambda doc: self._categorical_char_ngrams(preprocess(self.decode(doc.content)))
 
 
+
+########################################################################################################################
+
 class LDA(BaseEstimator, VectorizerMixin):
     """
     uses gensim library for topic modeling
@@ -494,6 +508,7 @@ class LDA(BaseEstimator, VectorizerMixin):
         # max_topic = weight.argmax()
         # return max_topic
 
+########################################################################################################################
 
 class LIWC(BaseEstimator):
     def __init__(self, lang):
@@ -534,6 +549,8 @@ class LIWC(BaseEstimator):
         return self.scalar.transform(np.array(X))
 
 
+########################################################################################################################
+
 class AgeGenderFeature(BaseEstimator):
     def get_feature_names(self):
         return np.array(['Gender_Male', 'Gender_Female', 'AG_18_24', 'AG_25_34', 'AG_35_49', 'AG_50_xx'])
@@ -565,6 +582,8 @@ class AgeGenderFeature(BaseEstimator):
 
         return np.array(X)
 
+
+########################################################################################################################
 
 if __name__ == "__main__":
     data = [Document( name='usr1',document=["Fun i'nn is dho the enjoyment of b4 4get for my girlfriend"]),Document(name='user2',document=[
